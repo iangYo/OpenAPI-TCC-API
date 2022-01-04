@@ -1,0 +1,31 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cf2728752
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cb48bb556
+modified: 1641339524488
+created: 1641338978871
+url: "{{ base_url }}/testimonials"
+name: Store one testimonial
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user": "0",
+      "title": "string",
+      "text": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_e75cfce7052b4d3a8a71d697bab581a6
+authentication: {}
+metaSortKey: -1641338978871
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
