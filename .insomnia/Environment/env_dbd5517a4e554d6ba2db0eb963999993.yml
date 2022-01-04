@@ -1,0 +1,18 @@
+_id: env_dbd5517a4e554d6ba2db0eb963999993
+type: Environment
+parentId: env_cd53d52fe069c94822be8640859673693a9c6895
+modified: 1641323127032
+created: 1641312577063
+name: staging
+data:
+  scheme: https
+  host: some-tcc-api.herokuapp.com
+  base_path: /v1
+dataPropertyOrder:
+  "&":
+    - scheme
+    - host
+    - base_path
+color: "#ffbb00"
+isPrivate: false
+metaSortKey: 1641312577063
