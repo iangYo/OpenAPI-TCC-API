@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641336344211
+modified: 1641339490952
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -14,6 +14,8 @@ contents: >-
   tags:
     - name: auth
       description: Endpoints for authentication
+    - name: testimonial
+      description: Endpoints for testimonials
   paths:
     /auth/login:
       post:
@@ -60,7 +62,17 @@ contents: >-
                   createdAt: '2021-11-30T23:29:32.932Z'
                   updatedAt: '2021-11-30T23:29:32.932Z'
                   __v: 0
-
+    /testimonials:
+      post:
+        tags:
+          - testimonial
+        summary: Store one testimonial
+        description: ''
+        requestBody:
+          $ref: '#/components/requestBodies/Testimonial'
+        responses:
+          '201':
+            description: Created
   servers:
     - url: http://localhost:3333/v1
   components:
@@ -76,6 +88,12 @@ contents: >-
             schema:
               $ref: "#/components/schemas/Auth"
         required: true
+      Testimonial:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Testimonial"
+        required: true
     schemas:
       Auth:
         type: object
@@ -89,6 +107,16 @@ contents: >-
           email:
             type: string
           password:
+            type: string
+      Testimonial:
+        type: object
+        required:
+          - title
+          - text
+        properties:
+          title:
+            type: string
+          text:
             type: string
       ApiResponse:
         type: object
