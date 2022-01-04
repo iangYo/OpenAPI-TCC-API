@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641323799834
+modified: 1641336344211
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -54,6 +54,7 @@ contents: >-
             content:
               application/json:
                 example:
+                  name: Foo Bar
                   email: foobar@gmail.com
                   _id: 0
                   createdAt: '2021-11-30T23:29:32.932Z'
@@ -79,9 +80,12 @@ contents: >-
       Auth:
         type: object
         required:
+          - name
           - email
           - password
         properties:
+          name:
+            type: string
           email:
             type: string
           password:
