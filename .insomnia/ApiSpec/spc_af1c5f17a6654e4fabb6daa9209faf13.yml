@@ -1,0 +1,99 @@
+_id: spc_af1c5f17a6654e4fabb6daa9209faf13
+type: ApiSpec
+parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
+modified: 1641323799834
+created: 1638308055978
+fileName: TCC API
+contents: >-
+  openapi: 3.0.0
+
+  info:
+    description: API
+    version: 1.0.0
+    title: API
+  tags:
+    - name: auth
+      description: Endpoints for authentication
+  paths:
+    /auth/login:
+      post:
+        tags:
+          - auth
+        summary: Login
+        description: ''
+        requestBody:
+          $ref: "#/components/requestBodies/Auth"
+        responses:
+          "200":
+            description: Ok
+            content:
+              application/json:
+                example:
+                  _id: 0
+                  email: foo@bar.com
+                  createdAt: <timestamp>
+                  updatedAt: <timestamp>
+                  token: <token>
+          '404':
+            description: Not found
+            content:
+              application/json:
+                example:
+                  error: Usuário não encontrado!
+    /auth/store:
+      post:
+        tags:
+          - auth
+        summary: Sign Up
+        description: ''
+        requestBody:
+          $ref: '#/components/requestBodies/Auth'
+        responses:
+          '201':
+            description: Created
+            content:
+              application/json:
+                example:
+                  email: foobar@gmail.com
+                  _id: 0
+                  createdAt: '2021-11-30T23:29:32.932Z'
+                  updatedAt: '2021-11-30T23:29:32.932Z'
+                  __v: 0
+
+  servers:
+    - url: http://localhost:3333/v1
+  components:
+    securitySchemes:
+      bearerAuth:            # arbitrary name for the security scheme
+        type: http
+        scheme: bearer
+        bearerFormat: JWT  # optional, arbitrary value for documentation purposes
+    requestBodies:
+      Auth:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Auth"
+        required: true
+    schemas:
+      Auth:
+        type: object
+        required:
+          - email
+          - password
+        properties:
+          email:
+            type: string
+          password:
+            type: string
+      ApiResponse:
+        type: object
+        properties:
+          code:
+            type: integer
+            format: int32
+          type:
+            type: string
+          message:
+            type: string
+contentType: yaml
