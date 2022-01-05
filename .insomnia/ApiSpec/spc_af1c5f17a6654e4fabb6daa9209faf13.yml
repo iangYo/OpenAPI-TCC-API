@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641398498495
+modified: 1641399593725
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -91,6 +91,16 @@ contents: >-
         responses:
           '200':
             description: Ok
+            content:
+              application/json:
+                example:
+                  - _id: 0
+                    user: 0
+                    title: Foo
+                    text: FooBar
+                    createdAt: '2022-01-05T15:00:42.226Z'
+                    updatedAt: '2022-01-05T15:00:42.226Z'
+                    __v: 0
       post:
         tags:
           - testimonial
@@ -103,6 +113,34 @@ contents: >-
         responses:
           '201':
             description: Created
+    '/testimonials/{id}':
+      get:
+        tags:
+          - testimonial
+        summary: Get one testimoniall
+        description: Get one testimonial by id
+        security:
+          - bearerAuth: []
+        parameters:
+           - name: id
+             in: path
+             description: Testimonial id
+             required: true
+             schema:
+               type: integer
+        responses:
+          '200':
+            description: Ok 
+            content:
+              application/json:
+                example:
+                  _id: 0
+                  user: 0
+                  title: Foo
+                  text: Foobar
+                  createdAt: '2022-01-05T15:00:42.226Z'
+                  updatedAt: '2022-01-05T15:00:42.226Z'
+                  __v: 0
   servers:
     - url: http://localhost:3333/v1
   components:
