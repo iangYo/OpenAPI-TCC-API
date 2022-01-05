@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641400132029
+modified: 1641423189898
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -141,6 +141,34 @@ contents: >-
                   createdAt: '2022-01-05T15:00:42.226Z'
                   updatedAt: '2022-01-05T15:00:42.226Z'
                   __v: 0
+    '/testimonials/user/{id}':
+      get:
+        tags:
+          - testimonial
+        summary: Get all testimonials by user
+        description: ''
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: id
+            in: path
+            description: The owner ID of the testimonials
+            required: true
+            schema:
+              type: string
+        responses:
+          '200':
+            description: Ok
+            content:
+              application/json:
+                example:
+                  - _id: 0
+                    user: 0
+                    title: string
+                    text: string
+                    createdAt: '2022-01-05T15:20:11.558Z'
+                    updatedAt: '2022-01-05T15:20:11.558Z'
+                    __v: 0
   servers:
     - url: http://localhost:3333/v1
   components:

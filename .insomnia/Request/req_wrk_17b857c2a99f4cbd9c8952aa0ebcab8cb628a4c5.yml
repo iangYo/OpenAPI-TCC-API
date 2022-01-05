@@ -1,0 +1,24 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cb628a4c5
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cb48bb556
+modified: 1641423252562
+created: 1641423107606
+url: "{{ base_url }}/testimonials/user/{{ id }}"
+name: Get all testimonials by user
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.bearerToken }}"
+  prefix: ""
+metaSortKey: -1641423107606
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
