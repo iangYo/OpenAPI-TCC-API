@@ -1,0 +1,34 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c91906fcc
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c118a9989
+modified: 1641425161497
+created: 1641424934209
+url: "{{ base_url }}/comments"
+name: Store one comment
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+      "user": "61d4eb0223db29a7d3b16f9b",
+      "testimonial": "61d60fee4092d9cbde4bbe38",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend lobortis enim. Donec iaculis enim mauris, sit amet pellentesque justo ultricies at. Pellentesque vulputate consectetur elit, in porttitor tortor vestibulum eu. Integer vulputate aliquet risus, at placerat purus gravida at. Nulla vitae nisl congue nulla sodales auctor suscipit quis massa."
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_b07a9faca9a044ada94e30d265dd6ee1
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDRlYjAyMjNkYjI5YTdkM2IxNmY5YiIsImVtYWlsIjoiaWFuZ2FicmllbHJvZHJpZ3Vlc0BnbWFpbC5jb20iLCJpYXQiOjE2NDE0MTA4MjUsImV4cCI6MTY0MjAxNTYyNX0.i4ZmRNrSYJIztiKP0BOAtAyF3wIR6v4149rdE5MNHIE
+  prefix: ""
+metaSortKey: -1641424934209
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
