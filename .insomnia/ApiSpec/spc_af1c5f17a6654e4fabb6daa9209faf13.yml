@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641339490952
+modified: 1641343891935
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -24,7 +24,7 @@ contents: >-
         summary: Login
         description: ''
         requestBody:
-          $ref: "#/components/requestBodies/Auth"
+          $ref: "#/components/requestBodies/AuthLogin"
         responses:
           "200":
             description: Ok
@@ -32,6 +32,7 @@ contents: >-
               application/json:
                 example:
                   _id: 0
+                  name: Foo Bar
                   email: foo@bar.com
                   createdAt: <timestamp>
                   updatedAt: <timestamp>
@@ -49,7 +50,7 @@ contents: >-
         summary: Sign Up
         description: ''
         requestBody:
-          $ref: '#/components/requestBodies/Auth'
+          $ref: '#/components/requestBodies/AuthStore'
         responses:
           '201':
             description: Created
@@ -82,11 +83,17 @@ contents: >-
         scheme: bearer
         bearerFormat: JWT  # optional, arbitrary value for documentation purposes
     requestBodies:
-      Auth:
+      AuthStore:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Auth"
+              $ref: "#/components/schemas/AuthStore"
+        required: true
+      AuthLogin:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthLogin"
         required: true
       Testimonial:
         content:
@@ -95,7 +102,7 @@ contents: >-
               $ref: "#/components/schemas/Testimonial"
         required: true
     schemas:
-      Auth:
+      AuthStore:
         type: object
         required:
           - name
@@ -104,6 +111,16 @@ contents: >-
         properties:
           name:
             type: string
+          email:
+            type: string
+          password:
+            type: string
+      AuthLogin:
+        type: object
+        required:
+          - email
+          - password
+        properties:
           email:
             type: string
           password:
