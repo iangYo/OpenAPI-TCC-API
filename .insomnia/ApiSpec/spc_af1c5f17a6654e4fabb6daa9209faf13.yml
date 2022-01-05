@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641394736967
+modified: 1641398498495
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -64,11 +64,40 @@ contents: >-
                   updatedAt: '2021-11-30T23:29:32.932Z'
                   __v: 0
     /testimonials:
+      get:
+        tags:
+          - testimonial
+        summary: Get all testimonials
+        description: ''
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: limit
+            in: query
+            description: Quantity of testimonials returned 
+            required: false
+            explode: true
+            schema:
+              type: integer
+              default: 10
+          - name: page
+            in: query
+            description: Number of page to skip before starting to collect the result set
+            required: false
+            explode: true
+            schema:
+              type: integer
+              default: 1
+        responses:
+          '200':
+            description: Ok
       post:
         tags:
           - testimonial
         summary: Store one testimonial
         description: ''
+        security:
+          - bearerAuth: []
         requestBody:
           $ref: '#/components/requestBodies/Testimonial'
         responses:

@@ -1,7 +1,7 @@
 _id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cf2728752
 type: Request
 parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cb48bb556
-modified: 1641339524488
+modified: 1641397231575
 created: 1641338978871
 url: "{{ base_url }}/testimonials"
 name: Store one testimonial
@@ -11,7 +11,7 @@ body:
   mimeType: application/json
   text: |-
     {
-    	"user": "0",
+    	"user": "61d4eb0223db29a7d3b16f9b",
       "title": "string",
       "text": "string"
     }
@@ -20,7 +20,10 @@ headers:
   - name: Content-Type
     value: application/json
     id: pair_e75cfce7052b4d3a8a71d697bab581a6
-authentication: {}
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDRlYjAyMjNkYjI5YTdkM2IxNmY5YiIsImVtYWlsIjoiaWFuZ2FicmllbHJvZHJpZ3Vlc0BnbWFpbC5jb20iLCJpYXQiOjE2NDEzOTU5NDIsImV4cCI6MTY0MjAwMDc0Mn0.WefOuvjMQ-C9WTC8i5Fzb529_86hIRPXBKuGPbSbjKo
+  prefix: ""
 metaSortKey: -1641338978871
 isPrivate: false
 settingStoreCookies: true
