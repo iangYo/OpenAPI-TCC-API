@@ -1,0 +1,32 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c75437bb9
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cb48bb556
+modified: 1641398673365
+created: 1641398344286
+url: "{{ base_url }}/testimonials"
+name: Get all testimonials
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: limit
+    disabled: false
+    value: "10"
+    id: pair_4b9910a6ddd1446dbd697ecc2aa3badb
+  - name: page
+    disabled: false
+    value: "1"
+    id: pair_f327dc1d38bd45ce9c392aacde7ed59d
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDRlYjAyMjNkYjI5YTdkM2IxNmY5YiIsImVtYWlsIjoiaWFuZ2FicmllbHJvZHJpZ3Vlc0BnbWFpbC5jb20iLCJpYXQiOjE2NDEzOTU5NDIsImV4cCI6MTY0MjAwMDc0Mn0.WefOuvjMQ-C9WTC8i5Fzb529_86hIRPXBKuGPbSbjKo
+  prefix: ""
+metaSortKey: -1641398344286
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
