@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641428349490
+modified: 1641825814132
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -171,66 +171,6 @@ contents: >-
                     createdAt: '2022-01-05T15:20:11.558Z'
                     updatedAt: '2022-01-05T15:20:11.558Z'
                     __v: 0
-    /comments:
-      get:
-        tags:
-          - comment
-        summary: Get all comments from a testimonial
-        description: ''
-        security:
-          - bearerAuth: []
-        parameters:
-          - name: testimonial
-            in: query
-            description: Testimonial id
-            required: true
-            explode: true
-            schema:
-              type: string
-        responses:
-          '200':
-            description: Ok
-            content:
-              application/json:
-                example:
-                  - _id: 0
-                    user: 0
-                    testimonial: 0
-                    comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend
-                      lobortis enim.
-                    createdAt: '2022-01-05T23:26:34.292Z'
-                    updatedAt: '2022-01-05T23:26:34.292Z'
-                    __v: 0
-      post:
-        tags:
-          - comment
-        summary: Store one comment
-        description: ''
-        security:
-          - bearerAuth: []
-        requestBody:
-          $ref: '#/components/requestBodies/Comment'
-        responses:
-          '201':
-            description: Created
-    '/comments/{id}':
-      delete:
-        tags:
-          - comment
-        summary: Delete one comment
-        description: ''
-        security:
-          - bearerAuth: []
-        parameters:
-          - name: id
-            in: path
-            description: Comment id
-            required: true
-            schema:
-              type: string
-        responses:
-          '200':
-            description: Ok
   servers:
     - url: http://localhost:3333/v1
   components:
@@ -257,12 +197,6 @@ contents: >-
           application/json:
             schema:
               $ref: "#/components/schemas/Testimonial"
-        required: true
-      Comment:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Comment"
         required: true
     schemas:
       AuthStore:
@@ -300,19 +234,6 @@ contents: >-
           title:
             type: string
           text:
-            type: string
-      Comment:
-        type: object
-        required:
-          - user
-          - testimonial
-          - comment
-        properties:
-          user:
-            type: string
-          testimonial:
-            type: string
-          comment:
             type: string
       ApiResponse:
         type: object
