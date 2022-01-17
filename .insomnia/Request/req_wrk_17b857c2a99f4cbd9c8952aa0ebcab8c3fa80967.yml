@@ -1,0 +1,24 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c3fa80967
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cd2dc8738
+modified: 1642459377248
+created: 1642457913633
+url: "{{ base_url }}/objective"
+name: Get all objectives of one user
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.bearerToken }}"
+  prefix: ""
+metaSortKey: -1642457913633
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

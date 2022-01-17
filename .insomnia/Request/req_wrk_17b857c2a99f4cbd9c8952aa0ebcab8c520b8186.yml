@@ -1,0 +1,35 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c520b8186
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cd2dc8738
+modified: 1642459067636
+created: 1642457653960
+url: "{{ base_url }}/objective"
+name: Create one objective
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "user": "61d4eb0223db29a7d3b16f9b",
+      "start_date": "2021-09-29T19:17:14.048+00:00",
+      "end_date": "2021-09-29T19:17:14.048+00:00",
+      "reason": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_7147b2d8693549368be78b2c17a9e541
+authentication:
+  type: bearer
+  token: "{{ _.bearerToken }}"
+  prefix: ""
+metaSortKey: -1642457653960
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

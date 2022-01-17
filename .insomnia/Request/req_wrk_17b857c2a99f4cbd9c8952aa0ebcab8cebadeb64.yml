@@ -1,0 +1,32 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cebadeb64
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cd2dc8738
+modified: 1642459377614
+created: 1642458963734
+url: "{{ base_url }}/objective/{{ id }}"
+name: Get all objectives of one user
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "reason": "stringue"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_99d76a002f02430f92ff5f4d0d09bdfc
+authentication:
+  type: bearer
+  token: "{{ _.bearerToken }}"
+  prefix: ""
+metaSortKey: -1642458963734
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,24 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c46fbed2e
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cd2dc8738
+modified: 1642459383645
+created: 1642459342967
+url: "{{ base_url }}/objective/{{ id }}"
+name: Delete one objective
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.bearerToken }}"
+  prefix: ""
+metaSortKey: -1642459342967
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
