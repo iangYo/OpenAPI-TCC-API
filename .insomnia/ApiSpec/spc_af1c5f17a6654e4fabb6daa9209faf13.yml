@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1641825814132
+modified: 1642459342990
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -16,8 +16,8 @@ contents: >-
       description: Endpoints for authentication
     - name: testimonial
       description: Endpoints for testimonials
-    - name: comment
-      description: Endpoints for comment
+    - name: objective
+      description: Endpoints for objective
   paths:
     /auth/login:
       post:
@@ -171,6 +171,87 @@ contents: >-
                     createdAt: '2022-01-05T15:20:11.558Z'
                     updatedAt: '2022-01-05T15:20:11.558Z'
                     __v: 0
+    /objective:
+      get:
+        tags:
+          - objective
+        summary: Get all objectives of one user
+        description: ''
+        security:
+          - bearerAuth: []
+        responses:
+          '200':
+            description: Ok
+            content:
+              application/json:
+                example:
+                  - _id: 0
+                    user: 0
+                    start_date: '2021-09-29T19:17:14.048Z'
+                    end_date: '2021-09-29T19:17:14.048Z'
+                    reason: string
+                    createdAt: '2022-01-17T22:17:23.062Z'
+                    updatedAt: '2022-01-17T22:17:23.062Z'
+                    __v: 0
+      post:
+        tags:
+          - objective
+        summary: Create one objective
+        description: ''
+        security:
+          - bearerAuth: []
+        requestBody:
+          $ref: '#/components/requestBodies/Objective'
+        responses:
+          '201':
+            description: Created
+    '/objective/{id}':
+      patch:
+        tags:
+          - objective
+        summary: Get all objectives of one user
+        description: ''
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: id
+            in: path
+            description: The objective id
+            required: true
+            schema:
+              type: string
+        requestBody:
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    start_date:
+                      type: string
+                    end_date:
+                      type: string
+                    reason:
+                      type: string
+        responses:
+          '200':
+            description: Ok
+      delete:
+        tags:
+          - objective
+        summary: Delete one objective
+        description: ''
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: id
+            in: path
+            description: The objective id
+            required: true
+            schema:
+              type: string
+        responses:
+          '200':
+            description: Ok
   servers:
     - url: http://localhost:3333/v1
   components:
@@ -197,6 +278,12 @@ contents: >-
           application/json:
             schema:
               $ref: "#/components/schemas/Testimonial"
+        required: true
+      Objective:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Objective"
         required: true
     schemas:
       AuthStore:
@@ -234,6 +321,21 @@ contents: >-
           title:
             type: string
           text:
+            type: string
+      Objective:
+        type: object
+        required:
+          - user
+          - start_date
+          - end_date
+        properties:
+          user:
+            type: string
+          start_date:
+            type: string
+          end_date:
+            type: string
+          reason:
             type: string
       ApiResponse:
         type: object
