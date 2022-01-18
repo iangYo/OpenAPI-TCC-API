@@ -1,0 +1,41 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c6bfed643
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c43348291
+modified: 1642529613263
+created: 1642524780447
+url: "{{ base_url }}/diary/{{ id }}"
+name: Update one record of diary
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "mood": [
+        null
+      ],
+      "physical_activity": "string",
+      "sleep": "string",
+      "feed": "string",
+      "symptoms": [
+        null
+      ],
+      "date": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_215e875503ce421f98cd7a5a803fe9ac
+authentication:
+  type: bearer
+  token: "{{ bearerToken }}"
+  prefix: ""
+metaSortKey: -1642524780447
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

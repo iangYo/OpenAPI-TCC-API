@@ -1,0 +1,24 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cb46ebb29
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c43348291
+modified: 1642529630174
+created: 1642524780451
+url: "{{ base_url }}/diary"
+name: Get all records
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ bearerToken }}"
+  prefix: ""
+metaSortKey: -1642524780451
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

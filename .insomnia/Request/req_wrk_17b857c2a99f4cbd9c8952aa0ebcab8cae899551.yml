@@ -1,0 +1,24 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cae899551
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c43348291
+modified: 1642529625678
+created: 1642524780445
+url: "{{ base_url }}/diary/{{ id }}"
+name: Delete one record
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ bearerToken }}"
+  prefix: ""
+metaSortKey: -1642524780445
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

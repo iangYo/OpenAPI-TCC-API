@@ -1,0 +1,42 @@
+_id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c7487cee7
+type: Request
+parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8c43348291
+modified: 1642529616394
+created: 1642524780449
+url: "{{ base_url }}/diary"
+name: Create one record
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "user": "string",
+      "mood": [
+        null
+      ],
+      "physical_activity": "string",
+      "sleep": "string",
+      "feed": "string",
+      "symptoms": [
+        null
+      ],
+      "date": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_3e4e7a1602054d978b3c02affa94b0ff
+authentication:
+  type: bearer
+  token: "{{ bearerToken }}"
+  prefix: ""
+metaSortKey: -1642524780449
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
