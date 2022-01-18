@@ -1,10 +1,10 @@
 _id: req_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cebadeb64
 type: Request
 parentId: fld_wrk_17b857c2a99f4cbd9c8952aa0ebcab8cd2dc8738
-modified: 1642459377614
+modified: 1642524791386
 created: 1642458963734
 url: "{{ base_url }}/objective/{{ id }}"
-name: Get all objectives of one user
+name: Update one objective
 description: ""
 method: PATCH
 body:
