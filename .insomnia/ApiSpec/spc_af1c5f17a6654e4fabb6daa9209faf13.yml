@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1642459342990
+modified: 1642529600691
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -18,6 +18,8 @@ contents: >-
       description: Endpoints for testimonials
     - name: objective
       description: Endpoints for objective
+    - name: diary
+      description: Endpoints for diary
   paths:
     /auth/login:
       post:
@@ -209,7 +211,7 @@ contents: >-
       patch:
         tags:
           - objective
-        summary: Get all objectives of one user
+        summary: Update one objective
         description: ''
         security:
           - bearerAuth: []
@@ -252,6 +254,99 @@ contents: >-
         responses:
           '200':
             description: Ok
+    /diary:
+      get:
+        tags:
+          - diary
+        summary: Get all records
+        description: ''
+        security:
+          - bearerAuth: []
+        responses:
+          '200':
+            description: Ok
+            content:
+              application/json:
+                example:
+                  - _id: 0
+                    user: 0
+                    mood:
+                    - Calmo
+                    physical_activity: Nenhuma
+                    sleep: ruim
+                    feed: Bom
+                    symptoms:
+                    - Náusea
+                    - tremores
+                    date: '2021-09-29T19:17:14.048Z'
+                    createdAt: '2022-01-18T17:59:24.579Z'
+                    updatedAt: '2022-01-18T18:01:23.591Z'
+                    __v: 0
+      post:
+        tags:
+          - diary
+        summary: Create one record
+        description: ''
+        security:
+          - bearerAuth: []
+        requestBody:
+          $ref: '#/components/requestBodies/Diary'
+        responses:
+          '201':
+            description: Created
+    '/diary/{id}':
+      patch:
+        tags:
+          - diary
+        summary: Update one record of diary
+        description: ''
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: id
+            in: path
+            description: The record id
+            required: true
+            schema:
+              type: string
+        requestBody:
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    mood:
+                      type: array
+                    physical_activity:
+                      type: string
+                    sleep:
+                      type: string
+                    feed:
+                      type: string
+                    symptoms:
+                      type: array
+                    date:
+                      type: string
+        responses:
+          '200':
+            description: Ok
+      delete:
+        tags:
+          - diary
+        summary: Delete one record
+        description: ''
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: id
+            in: path
+            description: The record id
+            required: true
+            schema:
+              type: string
+        responses:
+          '200':
+            description: Ok
   servers:
     - url: http://localhost:3333/v1
   components:
@@ -285,6 +380,11 @@ contents: >-
             schema:
               $ref: "#/components/schemas/Objective"
         required: true
+      Diary:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Diary"
     schemas:
       AuthStore:
         type: object
@@ -336,6 +436,31 @@ contents: >-
           end_date:
             type: string
           reason:
+            type: string
+      Diary:
+        type: object
+        required:
+          - user
+          - mood
+          - physical_activity
+          - sleep
+          - feed
+          - symptoms
+          - date
+        properties:
+          user:
+            type: string
+          mood:
+            type: array
+          physical_activity:
+            type: string
+          sleep:
+            type: string
+          feed:
+            type: string
+          symptoms:
+            type: array
+          date:
             type: string
       ApiResponse:
         type: object
