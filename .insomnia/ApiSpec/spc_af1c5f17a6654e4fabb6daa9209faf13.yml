@@ -1,7 +1,7 @@
 _id: spc_af1c5f17a6654e4fabb6daa9209faf13
 type: ApiSpec
 parentId: wrk_17b857c2a99f4cbd9c8952aa0ebcab8c
-modified: 1642529600691
+modified: 1643240657722
 created: 1638308055978
 fileName: TCC API
 contents: >-
@@ -439,14 +439,6 @@ contents: >-
             type: string
       Diary:
         type: object
-        required:
-          - user
-          - mood
-          - physical_activity
-          - sleep
-          - feed
-          - symptoms
-          - date
         properties:
           user:
             type: string
@@ -461,6 +453,8 @@ contents: >-
           symptoms:
             type: array
           date:
+            type: string
+          observations:
             type: string
       ApiResponse:
         type: object
